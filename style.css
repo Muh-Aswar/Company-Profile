@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'popins';
+    scroll-behavior: smooth;
 }
 .blue{
     color: #2340e0;
@@ -14,24 +15,46 @@
 }
 nav{
     background: #fff;
-    height: 70px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
     padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
 }
 nav .menu{
     display: flex;
     gap: 30px;
     align-items: center;
 }
-nav .menu>span{
-    border-radius: 20px;
-    padding: 5px 10px;
-    transition: 0.5s;
+
+nav .menu>ul{
+    display: flex;
 }
-nav .menu>span:hover{
+.menu ul>li{
+    list-style: none;
+    padding: 15px 25px;
+}
+.menu ul>li a{
+    text-decoration: none;
+    position: relative;
+    color: #000;
+    font-size: 1rem;
+}
+.menu ul>li a::before{
+    content: "";
+    width: 0;
+    height: 3px;
     background: #2340e0;
-    color: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transition: .5s;
+}
+.menu ul>li:hover a::before{
+    width: 100%;
 }
 nav .brand{
     /* background: yellowgreen; */
@@ -55,6 +78,7 @@ nav .brand>img{
     display: flex;
     align-items: center;
     width: 100%;
+    margin-top: 50px;
 }
 header .side-1{
     width: 100%;
